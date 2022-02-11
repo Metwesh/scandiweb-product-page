@@ -1,11 +1,11 @@
 import { useState } from "react";
-import Navigation from "../components/ProductNavigation";
+import AddProductNavigation from "../components/AddProductNavigation";
 
 export default function AddProduct() {
   const [selectedType, setSelectedType] = useState();
   return (
     <>
-      <Navigation />
+      <AddProductNavigation />
       <form
         id="product_form"
         action="http://127.0.0.1:8080/products/addProduct.php"

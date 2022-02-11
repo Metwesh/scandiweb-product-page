@@ -1,7 +1,7 @@
 import { useLayoutEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import CardList from "../components/CardList";
-import Navigation from "../components/ProductNavigation";
+import ProductNavigation from "../components/ProductNavigation";
 
 export default function Home() {
   const [products, setProducts] = useState([]);
@@ -26,7 +26,7 @@ export default function Home() {
 
   return (
     <>
-      <Navigation />
+      <ProductNavigation />
       <form
         className="page-content card-stack"
         id="delete-product-form"
