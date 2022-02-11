@@ -1,10 +1,10 @@
-import { Link } from "react-router-dom";
+import { BrowserRouter, Link } from "react-router-dom";
 
 export default function Navigation(props) {
   const path = window.location.pathname;
 
   return (
-    <>
+    <BrowserRouter basename="/scandiweb-product-page">
       {path === "/" ? (
         <nav>
           <h1>Product list</h1>
@@ -33,6 +33,6 @@ export default function Navigation(props) {
         </nav>
       ) : null}
       <hr />
-    </>
+    </BrowserRouter>
   );
 }
