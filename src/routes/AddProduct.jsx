@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Navigation from "../components/Navigation";
+import Navigation from "../components/ProductNavigation";
 
 export default function AddProduct() {
   const [selectedType, setSelectedType] = useState();

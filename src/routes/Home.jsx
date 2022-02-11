@@ -1,7 +1,7 @@
 import { useLayoutEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import CardList from "../components/CardList";
-import Navigation from "../components/Navigation";
+import Navigation from "../components/ProductNavigation";
 
 export default function Home() {
   const [products, setProducts] = useState([]);
