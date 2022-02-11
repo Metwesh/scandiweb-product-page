@@ -1,17 +1,14 @@
-import { Link, useMatch } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Navigation(props) {
   const path = window.location.pathname;
-  let { url } = useMatch();
 
   return (
     <>
-      {path === `${url}/` ? (
+      {path === "/" ? (
         <nav>
           <h1>Product list</h1>
-          <Link
-            className="button button--primary push"
-            to={`${url}/add-product`}>
+          <Link className="button button--primary push" to="/add-product">
             Add Product
           </Link>
           <button
@@ -21,7 +18,7 @@ export default function Navigation(props) {
             Mass delete
           </button>
         </nav>
-      ) : path === `${url}/add-product` ? (
+      ) : path === "/add-product" ? (
         <nav>
           <h1>Add product</h1>
           <button
@@ -30,7 +27,7 @@ export default function Navigation(props) {
             className="button button--primary push">
             Save
           </button>
-          <Link className="button button--outline space" to={`${url}/`}>
+          <Link className="button button--outline space" to="/">
             Cancel
           </Link>
         </nav>
