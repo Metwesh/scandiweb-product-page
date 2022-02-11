@@ -6,8 +6,8 @@ function App() {
   return (
     <Routes>
       <Route path="/" exact element={<Home />}>
-        <Route path="add-product" exact element={<AddProduct />} />
-        <Route path="*" exact element={<Error404 />} />
+        <Route path="/add-product" exact element={<AddProduct />} />
+        <Route path="/*" exact element={<Error404 />} />
       </Route>
     </Routes>
   );

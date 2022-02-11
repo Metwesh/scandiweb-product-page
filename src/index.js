@@ -2,11 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./scss/styles.scss";
 import App from "./App";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 
 ReactDOM.render(
-  <BrowserRouter>
+  <React.StrictMode>
+    <HashRouter>
       <App />
-  </BrowserRouter>,
+    </HashRouter>
+  </React.StrictMode>,
   document.getElementById("root")
 );
