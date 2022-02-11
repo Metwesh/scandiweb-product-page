@@ -6,12 +6,16 @@ import Home from "./routes/Home";
 function App() {
   return (
     <Routes>
-      <Route path="scandiweb-product-page/" element={<Home />} />
       <Route
-        path="scandiweb-product-page/add-product"
-        element={<AddProduct />}
+        path="scandiweb-product-page"
+        render={({ match: { url } }) => (
+          <>
+            <Route path={`${url}/`} element={<Home />} />
+            <Route path={`${url}/add-product`} element={<AddProduct />} />
+            <Route path={`${url}/*`} element={<Error404 />} />
+          </>
+        )}
       />
-      <Route path="scandiweb-product-page/*" element={<Error404 />} />
     </Routes>
   );
 }
