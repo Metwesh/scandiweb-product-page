@@ -4,7 +4,7 @@ export default function Navigation(props) {
   const path = window.location.pathname;
   return (
     <>
-      {path === "/" ? (
+      {path === "scandiweb-product-page/" ? (
         <nav>
           <h1>Product list</h1>
           <Link className="button button--primary push" to="/add-product">
@@ -17,7 +17,7 @@ export default function Navigation(props) {
             Mass delete
           </button>
         </nav>
-      ) : path === "/add-product" ? (
+      ) : path === "scandiweb-product-page/add-product" ? (
         <nav>
           <h1>Add product</h1>
           <button

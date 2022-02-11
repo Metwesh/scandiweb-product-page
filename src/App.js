@@ -6,9 +6,12 @@ import Home from "./routes/Home";
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="add-product" element={<AddProduct />} />
-      <Route path="*" element={<Error404 />} />
+      <Route path="scandiweb-product-page/" element={<Home />} />
+      <Route
+        path="scandiweb-product-page/add-product"
+        element={<AddProduct />}
+      />
+      <Route path="scandiweb-product-page/*" element={<Error404 />} />
     </Routes>
   );
 }
