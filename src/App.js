@@ -1,14 +1,14 @@
-import { Route, Routes, useRouteMatch } from "react-router-dom";
+import { Route, Routes, useMatch } from "react-router-dom";
 import AddProduct from "./routes/AddProduct";
 import Error404 from "./components/Error404";
 import Home from "./routes/Home";
 function App() {
-  let { path, url } = useRouteMatch();
+  let { url } = useMatch();
   return (
     <Routes>
-            <Route path={`${url}/`} component={<Home />} />
-            <Route path={`${url}/add-product`} component={<AddProduct />} />
-            <Route path={`${url}/*`} component={<Error404 />} />
+      <Route path={`${url}/`} component={<Home />} />
+      <Route path={`${url}/add-product`} component={<AddProduct />} />
+      <Route path={`${url}/*`} component={<Error404 />} />
     </Routes>
   );
 }

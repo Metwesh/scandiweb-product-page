@@ -1,8 +1,8 @@
-import { Link, useRouteMatch } from "react-router-dom";
+import { Link, useMatch } from "react-router-dom";
 
 export default function Navigation(props) {
   const path = window.location.pathname;
-  let { url } = useRouteMatch();
+  let { url } = useMatch();
 
   return (
     <>
