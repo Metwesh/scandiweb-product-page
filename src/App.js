@@ -5,15 +5,9 @@ import Home from "./routes/Home";
 function App() {
   return (
     <Routes>
-        <Route path="/">
-          <Home />
-        </Route>
-        <Route path="/add-product">
-          <AddProduct />
-        </Route>
-        <Route path="/*">
-          <Error404 />
-        </Route>
+      <Route path="/" element={<Home />} />
+      <Route path="/add-product" element={<AddProduct />} />
+      <Route path="/*" element={<Error404 />} />
     </Routes>
   );
 }
