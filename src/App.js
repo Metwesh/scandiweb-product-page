@@ -6,9 +6,9 @@ import Home from "./routes/Home";
 function App() {
   return (
     <Routes>
-      <Route path="/" exact={true} element={<Home />} />
-      <Route path="add-product" exact={true} element={<AddProduct />} />
-      <Route path="*" exact={true} element={<Error404 />} />
+      <Route path="/" element={<Home />} />
+      <Route path="add-product" element={<AddProduct />} />
+      <Route path="*" element={<Error404 />} />
     </Routes>
   );
 }
