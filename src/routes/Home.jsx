@@ -8,12 +8,15 @@ export default function Home() {
   const [error, setError] = useState(null);
 
   useLayoutEffect(() => {
-    fetch("https://junior-developer-evaluation.000webhostapp.com/getProducts.php", {
-      method: "get",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
+    fetch(
+      "https://junior-developer-evaluation.000webhostapp.com/getProducts.php",
+      {
+        method: "get",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    )
       .then((response) => {
         if (!response.ok) {
           throw Error("No products available");
