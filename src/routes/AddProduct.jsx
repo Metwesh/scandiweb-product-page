@@ -8,7 +8,7 @@ export default function AddProduct() {
       <AddProductNavigation />
       <form
         id="product_form"
-        action="http://127.0.0.1:8080/products/addProduct.php"
+        action="https://junior-developer-evaluation.000webhostapp.com/addProduct.php"
         method="post"
         className="page-content mini-grid">
         <label>SKU:</label>

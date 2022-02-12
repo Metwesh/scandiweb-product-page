@@ -8,7 +8,7 @@ export default function Home() {
   const [error, setError] = useState(null);
 
   useLayoutEffect(() => {
-    fetch("http://127.0.0.1:8080/products/getProducts.php", {
+    fetch("https://junior-developer-evaluation.000webhostapp.com/getProducts.php", {
       method: "get",
       headers: {
         "Content-Type": "application/json",
@@ -30,7 +30,7 @@ export default function Home() {
       <form
         className="page-content card-stack"
         id="delete-product-form"
-        action="http://127.0.0.1:8080/products/deleteProduct.php"
+        action="https://junior-developer-evaluation.000webhostapp.com/deleteProduct.php"
         method="post">
         {error && (
           <h3 className="message">
