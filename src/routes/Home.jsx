@@ -11,9 +11,10 @@ export default function Home() {
     fetch(
       "https://junior-developer-evaluation.000webhostapp.com/getProducts.php",
       {
-        method: "post",
+        method: "get",
         headers: {
           "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
         },
       }
     )
