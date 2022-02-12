@@ -8,7 +8,7 @@ export default function AddProduct() {
       <AddProductNavigation />
       <form
         id="product_form"
-        action="https://junior-developer-evaluation.000webhostapp.com/addProduct.php"
+        action="https://scandiweb-jr-developer-eval.xyz/addProduct.php"
         method="post"
         className="page-content mini-grid">
         <label>SKU:</label>

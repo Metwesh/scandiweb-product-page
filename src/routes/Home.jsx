@@ -8,17 +8,12 @@ export default function Home() {
   const [error, setError] = useState(null);
 
   useLayoutEffect(() => {
-    fetch(
-      "https://junior-developer-evaluation.000webhostapp.com/getProducts.php",
-      {
-        method: "get",
-        headers: {
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Origin":
-            "https://junior-developer-evaluation.000webhostapp.com/",
-        },
-      }
-    )
+    fetch("https://scandiweb-jr-developer-eval.xyz/getProducts.php", {
+      method: "get",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
       .then((response) => {
         if (!response.ok) {
           throw Error("No products available");
@@ -35,7 +30,7 @@ export default function Home() {
       <form
         className="page-content card-stack"
         id="delete-product-form"
-        action="https://junior-developer-evaluation.000webhostapp.com/deleteProduct.php"
+        action="https://scandiweb-jr-developer-eval.xyz/deleteProduct.php"
         method="post">
         {error && (
           <h3 className="message">
