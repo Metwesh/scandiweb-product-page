@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
 
 export default function ProductNavigation() {
-  let path = window.location.pathname;
-  return path === "/" ? (
+  return window.location.pathname === "/" ? (
     <>
       <nav>
         <h1>Product list</h1>
@@ -18,7 +17,7 @@ export default function ProductNavigation() {
       </nav>
       <hr />
     </>
-  ) : path === "add-product" ? (
+  ) : window.location.pathname === "add-product" ? (
     <>
       <nav>
         <h1>Add product</h1>
@@ -32,6 +31,7 @@ export default function ProductNavigation() {
           Cancel
         </Link>
       </nav>
+      <hr />
     </>
   ) : null;
 }
