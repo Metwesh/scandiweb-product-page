@@ -1,11 +1,11 @@
 import { useState } from "react";
-import AddProductNavigation from "../components/AddProductNavigation";
+import Navigation from "../components/Navigation";
 
 export default function AddProduct() {
   const [selectedType, setSelectedType] = useState();
   return (
     <>
-      <AddProductNavigation />
+      <Navigation />
       <form
         id="product_form"
         action="https://scandiweb-jr-developer-eval.xyz/addProduct.php"
