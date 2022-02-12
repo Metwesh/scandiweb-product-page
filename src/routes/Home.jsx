@@ -14,7 +14,8 @@ export default function Home() {
         method: "get",
         headers: {
           "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Origin":
+            "https://junior-developer-evaluation.000webhostapp.com/",
         },
       }
     )
