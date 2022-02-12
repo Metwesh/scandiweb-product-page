@@ -17,7 +17,7 @@ export default function ProductNavigation() {
       </nav>
       <hr />
     </>
-  ) : window.location.pathname === "add-product" ? (
+  ) : window.location.pathname === "/add-product" ? (
     <>
       <nav>
         <h1>Add product</h1>
