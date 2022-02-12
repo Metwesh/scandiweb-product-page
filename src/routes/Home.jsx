@@ -11,7 +11,7 @@ export default function Home() {
     fetch(
       "https://junior-developer-evaluation.000webhostapp.com/getProducts.php",
       {
-        method: "get",
+        method: "post",
         headers: {
           "Content-Type": "application/json",
         },
