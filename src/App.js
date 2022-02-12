@@ -5,7 +5,7 @@ import Home from "./routes/Home";
 
 function App() {
   return (
-    <BrowserRouter basename="/scandiweb-product-page">
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/add-product" element={<AddProduct />} />
