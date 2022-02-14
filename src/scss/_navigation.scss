@@ -26,7 +26,7 @@ h1:not(.ignore) {
 }
 
 .space {
-  margin-left: 3rem;
+  margin-left: 5rem;
   @include breakpoint-down(small) {
     margin-left: 1rem;
   }
