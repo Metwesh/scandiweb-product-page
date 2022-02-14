@@ -1,7 +1,15 @@
 import { useState } from "react";
 import { currencyFormatter } from "../utils";
 
-export default function Card({ sku, name, price, type, description }) {
+export default function Card({
+  sku,
+  name,
+  price,
+  type,
+  description,
+  checked,
+  setChecked,
+}) {
   const [cardColor, setCardColor] = useState("");
   return (
     <div className={`card${cardColor}`}>
@@ -13,11 +21,11 @@ export default function Card({ sku, name, price, type, description }) {
         form="delete-product-form"
         className="delete-checkbox"
         onChange={(e) => {
+          setChecked(true)
           cardColor === ""
             ? setCardColor(" checkbox-selected")
             : setCardColor("");
         }}
-        required
       />
 
       <p className="product-info">{sku}</p>

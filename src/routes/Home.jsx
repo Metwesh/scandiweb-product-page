@@ -6,6 +6,14 @@ import Navigation from "../components/Navigation";
 export default function Home() {
   const [products, setProducts] = useState(null);
   const [error, setError] = useState(null);
+  const [checked, setChecked] = useState(false);
+
+  function handleCheck(e) {
+    if (!checked) {
+      e.preventDefault();
+      return false;
+    }
+  }
 
   useEffect(() => {
     fetch("https://scandiweb-jr-developer-eval.xyz/getProducts.php", {
@@ -32,6 +40,7 @@ export default function Home() {
         className="page-content card-stack"
         id="delete-product-form"
         action="https://scandiweb-jr-developer-eval.xyz/deleteProduct.php"
+        onSubmit={handleCheck}
         method="post">
         {error && (
           <h3 className="message">
@@ -46,7 +55,13 @@ export default function Home() {
           </h3>
         )}
         {!products ? <h3>Loading ...</h3> : null}
-        {products && <CardList products={products} />}
+        {products && (
+          <CardList
+            checked={checked}
+            setChecked={setChecked}
+            products={products}
+          />
+        )}
       </form>
       <hr />
       <footer>

@@ -1,6 +1,6 @@
 import Card from "./Card";
 
-export default function CardList({ products }) {
+export default function CardList({ products, checked, setChecked }) {
   return (
     <>
       {products.map((_product, i) => {
@@ -12,6 +12,8 @@ export default function CardList({ products }) {
             price={products[i].product_price}
             type={products[i].product_type}
             description={products[i].product_desc}
+            checked={checked}
+            setChecked={setChecked}
           />
         );
       })}
