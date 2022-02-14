@@ -4,7 +4,7 @@ import CardList from "../components/CardList";
 import Navigation from "../components/Navigation";
 
 export default function Home() {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState(null);
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -16,6 +16,7 @@ export default function Home() {
     })
       .then((response) => {
         if (!response.ok) {
+          setProducts([]);
           throw Error("No products available");
         }
         return response.json();
@@ -44,6 +45,7 @@ export default function Home() {
             </span>
           </h3>
         )}
+        {!products ? <h3>Loading ...</h3> : null}
         {products && <CardList products={products} />}
       </form>
       <hr />
