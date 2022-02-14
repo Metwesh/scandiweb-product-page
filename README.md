@@ -1,3 +1,3 @@
-# Product page 
+# Frontend
 
 Created for Scandiweb.
