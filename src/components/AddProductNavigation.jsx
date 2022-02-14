@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export default function ProductNavigation() {
+export default function AddProductNavigation() {
   <>
     <nav>
       <h1>Add product</h1>
