@@ -5,7 +5,7 @@ export default function ProductNavigation() {
     <>
       <nav>
         <h1>Product list</h1>
-        <Link className="button button--primary push" to="/add-product">
+        <Link title="ADD" className="button button--primary push" to="/add-product">
           ADD
         </Link>
         <button
