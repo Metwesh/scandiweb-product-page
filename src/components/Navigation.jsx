@@ -1,12 +1,16 @@
+import { Link } from "react-router-dom";
+
 export default function Navigation() {
   return window.location.pathname === "/" ? (
     <>
       <nav>
         <h1>Product list</h1>
         <div className="push">
-          <a className="button button--primary space" href="/add-product">
+          <Link
+            className="button button--primary space ADD"
+            href="/add-product">
             ADD
-          </a>
+          </Link>
           <button
             className="button button--outline space"
             form="delete-product-form"
@@ -28,9 +32,9 @@ export default function Navigation() {
             className="button button--primary space">
             Save
           </button>
-          <a className="button button--outline space" href="/">
+          <Link className="button button--outline space" href="/">
             Cancel
-          </a>
+          </Link>
         </div>
       </nav>
       <hr />
