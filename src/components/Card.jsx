@@ -12,11 +12,12 @@ export default function Card({ sku, name, price, type, description }) {
         value={sku}
         form="delete-product-form"
         className="delete-checkbox"
-        onChange={() => {
+        onChange={(e) => {
           cardColor === ""
             ? setCardColor(" checkbox-selected")
             : setCardColor("");
         }}
+        required
       />
 
       <p className="product-info">{sku}</p>
