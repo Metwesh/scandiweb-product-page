@@ -3,15 +3,17 @@ export default function Navigation() {
     <>
       <nav>
         <h1>Product list</h1>
-        <a className="button button--primary push" href="/add-product">
-          ADD
-        </a>
-        <button
-          className="button button--outline space"
-          form="delete-product-form"
-          id="delete-product-btn">
-          MASS DELETE
-        </button>
+        <div className="push">
+          <a className="button button--primary space" href="/add-product">
+            ADD
+          </a>
+          <button
+            className="button button--outline space"
+            form="delete-product-form"
+            id="delete-product-btn">
+            MASS DELETE
+          </button>
+        </div>
       </nav>
       <hr />
     </>
@@ -19,15 +21,17 @@ export default function Navigation() {
     <>
       <nav>
         <h1>Add product</h1>
-        <button
-          type="submit"
-          form="product_form"
-          className="button button--primary push">
-          Save
-        </button>
-        <a className="button button--outline space" href="/">
-          Cancel
-        </a>
+        <div className="push">
+          <button
+            type="submit"
+            form="product_form"
+            className="button button--primary space">
+            Save
+          </button>
+          <a className="button button--outline space" href="/">
+            Cancel
+          </a>
+        </div>
       </nav>
       <hr />
     </>
