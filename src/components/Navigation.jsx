@@ -6,9 +6,7 @@ export default function Navigation() {
       <nav>
         <h1>Product list</h1>
         <div className="push">
-          <Link
-            className="button button--primary space ADD"
-            href="/add-product">
+          <Link className="button button--primary space ADD" to="/add-product">
             ADD
           </Link>
           <button
@@ -32,7 +30,7 @@ export default function Navigation() {
             className="button button--primary space">
             Save
           </button>
-          <Link className="button button--outline space" href="/">
+          <Link className="button button--outline space" to="/">
             Cancel
           </Link>
         </div>
