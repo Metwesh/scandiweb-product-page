@@ -20,7 +20,7 @@ export default function Card({
         form="delete-product-form"
         className="delete-checkbox"
         onChange={(e) => {
-          setChecked(true)
+          setChecked(true);
           cardColor === ""
             ? setCardColor(" checkbox-selected")
             : setCardColor("");
