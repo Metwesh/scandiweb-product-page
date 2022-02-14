@@ -55,13 +55,7 @@ export default function Home() {
           </h3>
         )}
         {!products ? <h3>Loading ...</h3> : null}
-        {products && (
-          <CardList
-            checked={checked}
-            setChecked={setChecked}
-            products={products}
-          />
-        )}
+        {products && <CardList setChecked={setChecked} products={products} />}
       </form>
       <hr />
       <footer>

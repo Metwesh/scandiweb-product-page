@@ -7,7 +7,6 @@ export default function Card({
   price,
   type,
   description,
-  checked,
   setChecked,
 }) {
   const [cardColor, setCardColor] = useState("");
