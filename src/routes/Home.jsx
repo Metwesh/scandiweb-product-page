@@ -1,4 +1,4 @@
-import { useLayoutEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import CardList from "../components/CardList";
 import Navigation from "../components/Navigation";
@@ -7,7 +7,7 @@ export default function Home() {
   const [products, setProducts] = useState([]);
   const [error, setError] = useState(null);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     fetch("https://scandiweb-jr-developer-eval.xyz/getProducts.php", {
       method: "get",
       headers: {
