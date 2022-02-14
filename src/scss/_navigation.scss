@@ -59,7 +59,7 @@ hr {
   border-radius: 0.25rem;
   line-height: 1.5;
   color: gray;
-  font-size: 14px;
+  font-size: 16px;
   transition: all 150ms ease-in-out;
   @include breakpoint-down(small) {
     padding: 0.175rem 0.35rem;
