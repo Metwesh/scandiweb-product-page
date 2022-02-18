@@ -34,7 +34,6 @@ export default function AddProduct() {
     let formattedSKU = selectedType + inputSku;
     p_sku.forEach((sku) => {
       if (sku !== formattedSKU) return;
-      // insert price check
       else {
         setErrorMessage(false);
         e.preventDefault();
