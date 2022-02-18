@@ -29,6 +29,8 @@ input {
   .error-message {
     grid-column: 1 / span 2;
     text-align: center;
+    color: rgba(255, 0, 0, 0.705);
+    margin: 0;
   }
 }
 select:-moz-focusring {
