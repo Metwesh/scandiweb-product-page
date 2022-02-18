@@ -1,8 +1,47 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Navigation from "../components/Navigation";
 
 export default function AddProduct() {
+  const [products, setProducts] = useState(null);
   const [selectedType, setSelectedType] = useState();
+  const [inputSku, setInputSku] = useState();
+  const [errorMessage, setErrorMessage] = useState(true);
+
+  useEffect(() => {
+    fetch("https://scandiweb-jr-developer-eval.xyz/getProducts.php", {
+      method: "get",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw Error("No products available");
+        }
+        return response.json();
+      })
+      .then((products) => setProducts(products))
+      .catch((error) => console.log(error));
+  }, []);
+
+  let p_sku = products
+    ? products.map((_product, i) => {
+        return products[i].product_sku;
+      })
+    : null;
+
+  function handleSubmit(e) {
+    let formattedSKU = selectedType + inputSku;
+    p_sku.forEach((sku) => {
+      if (sku !== formattedSKU) return;
+      // insert price check
+      else {
+        setErrorMessage(false);
+        e.preventDefault();
+      }
+    });
+  }
+
   return (
     <>
       <Navigation />
@@ -10,16 +49,27 @@ export default function AddProduct() {
         id="product_form"
         action="https://scandiweb-jr-developer-eval.xyz/addProduct.php"
         method="post"
+        onSubmit={handleSubmit}
         className="page-content mini-grid">
         <label>SKU:</label>
+
         <input
           type="text"
           placeholder="SKU"
           id="sku"
           name="sku"
+          onChange={(e) => {
+            setErrorMessage(true);
+            setInputSku(e.target.value.padStart(4, "0"));
+          }}
           pattern="[a-z\d]*"
           required
         />
+        {!errorMessage ? (
+          <p className="error-message">
+            SKU already exists please input another
+          </p>
+        ) : null}
         <label>Name:</label>
         <input type="text" placeholder="Name" id="name" name="name" required />
         <label>Price ($):</label>
@@ -27,7 +77,7 @@ export default function AddProduct() {
           type="text"
           placeholder="Price"
           id="price"
-          pattern="^[1-9]\d*(\.\d+)?$"
+          pattern="^(0*[1-9][0-9]*(\.[0-9]+)?|0+\.[0-9]*[1-9][0-9]*)$"
           name="price"
           required
         />
@@ -37,13 +87,12 @@ export default function AddProduct() {
           required
           id="productType"
           name="type"
-          defaultValue={"Product"}
+          defaultValue={""}
           onChange={(e) => {
-            const selected = e.target.value;
-            setSelectedType(selected);
+            setSelectedType(e.target.value.toUpperCase().substring(0, 4));
           }}
           className="dropdown-select">
-          <option value="Product" disabled hidden>
+          <option value="" disabled hidden>
             Select type
           </option>
 
@@ -77,7 +126,7 @@ export default function AddProduct() {
               * Please state DVD capacity in megabytes
             </p>
           </>
-        ) : selectedType === "Furniture" ? (
+        ) : selectedType === "FURN" ? (
           <>
             <label>Height (cm):</label>
             <input
@@ -113,7 +162,7 @@ export default function AddProduct() {
               * Please specify product dimensions in HxWxL format
             </p>
           </>
-        ) : selectedType === "Book" ? (
+        ) : selectedType === "BOOK" ? (
           <>
             <label>Weight (kg):</label>
             <input
@@ -135,7 +184,6 @@ export default function AddProduct() {
         )}
         {/* DYNAMIC VALUES END */}
       </form>
-
       <hr />
       <footer>
         <h4>Scandiweb Test assignment</h4>

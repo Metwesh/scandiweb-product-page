@@ -25,6 +25,12 @@ input {
   border: 1px solid rgb(83, 83, 83);
 }
 
+@supports (grid-column: auto) {
+  .error-message {
+    grid-column: 1 / span 2;
+    text-align: center;
+  }
+}
 select:-moz-focusring {
   color: transparent;
   text-shadow: 0 0 0 #000;

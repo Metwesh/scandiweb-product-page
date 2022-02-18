@@ -5,8 +5,8 @@ import Navigation from "../components/Navigation";
 
 export default function Home() {
   const [products, setProducts] = useState(null);
-  const [error, setError] = useState(null);
   const [checked, setChecked] = useState(false);
+  const [error, setError] = useState(null);
 
   function handleCheck(e) {
     if (!checked) {
