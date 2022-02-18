@@ -30,7 +30,12 @@ input {
     grid-column: 1 / span 2;
     text-align: center;
     color: rgba(255, 0, 0, 0.705);
-    margin: -50px;
+    margin-top: -15rem;
+    margin-bottom: -15rem;
+    @include breakpoint-down(small) {
+      margin-top: -20rem;
+      margin-bottom: -20rem;
+    }
   }
 }
 select:-moz-focusring {
