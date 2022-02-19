@@ -36,31 +36,34 @@ export default function Home() {
   return (
     <>
       <Navigation />
-      <form
-        className="page-content card-stack"
-        id="delete-product-form"
-        action="https://scandiweb-jr-developer-eval.xyz/deleteProduct.php"
-        onSubmit={handleCheck}
-        method="post">
-        {error && (
-          <h3 className="message">
-            No products available
-            <span>
-              <Link
-                className="button button--primary space space-grid"
-                to="/add-product">
-                Add Product ?
-              </Link>
-            </span>
-          </h3>
-        )}
-        {!products ? (
+      <div className="page-content scroll">
+        {!products && (
           <div className="loading-wrapper">
             <div className="loading"></div>
           </div>
-        ) : null}
-        {products && <CardList setChecked={setChecked} products={products} />}
-      </form>
+        )}
+        <form
+          className="card-stack"
+          id="delete-product-form"
+          action="https://scandiweb-jr-developer-eval.xyz/deleteProduct.php"
+          onSubmit={handleCheck}
+          method="post">
+          {error && (
+            <h3 className="message">
+              No products available
+              <span>
+                <Link
+                  className="button button--primary space space-grid"
+                  to="/add-product">
+                  Add Product ?
+                </Link>
+              </span>
+            </h3>
+          )}
+
+          {products && <CardList setChecked={setChecked} products={products} />}
+        </form>
+      </div>
       <hr />
       <footer>
         <h4>Scandiweb Test assignment</h4>

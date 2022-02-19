@@ -5,7 +5,7 @@ export default function AddProduct() {
   const [products, setProducts] = useState(null);
   const [selectedType, setSelectedType] = useState();
   const [inputSku, setInputSku] = useState();
-  const [errorMessage, setErrorMessage] = useState(true);
+  const [errorMessage, setErrorMessage] = useState(false);
 
   useEffect(() => {
     fetch("https://scandiweb-jr-developer-eval.xyz/getProducts.php", {
@@ -35,7 +35,7 @@ export default function AddProduct() {
     p_sku.forEach((sku) => {
       if (sku !== formattedSKU) return;
       else {
-        setErrorMessage(false);
+        setErrorMessage(true);
         e.preventDefault();
       }
     });
@@ -58,17 +58,17 @@ export default function AddProduct() {
           id="sku"
           name="sku"
           onChange={(e) => {
-            setErrorMessage(true);
+            setErrorMessage(false);
             setInputSku(e.target.value.padStart(4, "0"));
           }}
           pattern="[a-z\d]*"
           required
         />
-        {!errorMessage ? (
+        {errorMessage && (
           <p className="error-message">
             SKU already exists please input another
           </p>
-        ) : null}
+        )}
         <label>Name:</label>
         <input type="text" placeholder="Name" id="name" name="name" required />
         <label>Price ($):</label>

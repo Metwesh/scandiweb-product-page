@@ -1,5 +1,8 @@
 .card-stack {
   padding: 3rem;
+}
+
+.scroll {
   overflow-y: scroll;
 }
 
@@ -62,8 +65,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 93.5vw;
-  height: 55vh;
+  width: 100vw;
+  height: 60vh;
 }
 
 .loading {
