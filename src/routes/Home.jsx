@@ -54,7 +54,11 @@ export default function Home() {
             </span>
           </h3>
         )}
-        {!products ? <h3>Loading ...</h3> : null}
+        {!products ? (
+          <div className="loading-wrapper">
+            <div className="loading"></div>
+          </div>
+        ) : null}
         {products && <CardList setChecked={setChecked} products={products} />}
       </form>
       <hr />

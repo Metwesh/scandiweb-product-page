@@ -58,6 +58,37 @@
   }
 }
 
+.loading-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 93.5vw;
+  height: 55vh;
+}
+
+.loading {
+  width: $radius;
+  height: $radius;
+  border-radius: 50%;
+  border: $ring-width solid transparent;
+}
+
+.loading:before {
+  content: " ";
+  display: block;
+  bottom: 4px;
+  right: 4px;
+  position: relative;
+  left: calc($ring-width * -1);
+  top: calc($ring-width * -1);
+  width: $radius;
+  height: $radius;
+  border-radius: 50%;
+  border: 9px solid;
+  border-color: $button-primary-background transparent transparent transparent;
+  animation: loading-rotate 0.8s ease-out infinite;
+}
+
 @supports (filter: hue-rotate()) {
   .delete-checkbox:checked {
     filter: brightness(40%) sepia(100%) hue-rotate(-50deg) saturate(600%)
