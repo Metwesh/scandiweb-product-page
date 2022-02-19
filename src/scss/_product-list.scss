@@ -24,8 +24,8 @@
   border-radius: 10px;
   padding: 1rem;
   transition: all 150ms;
-  max-width: 25rem;
-  max-height: 25rem;
+  max-width: 18rem;
+  max-height: 18rem;
   @include breakpoint-down(small) {
     padding: 0.5rem;
   }
