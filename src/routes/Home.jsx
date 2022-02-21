@@ -37,11 +37,6 @@ export default function Home() {
     <>
       <Navigation />
       <div className="page-content scroll">
-        {!products && (
-          <div className="loading-wrapper">
-            <div className="loading"></div>
-          </div>
-        )}
         <form
           className="card-stack"
           id="delete-product-form"
@@ -61,6 +56,11 @@ export default function Home() {
             </h3>
           )}
 
+          {!products && (
+            <div className="loading-wrapper">
+              <div className="loading"></div>
+            </div>
+          )}
           {products && <CardList setChecked={setChecked} products={products} />}
         </form>
       </div>
