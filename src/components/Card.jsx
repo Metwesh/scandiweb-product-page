@@ -8,6 +8,7 @@ export default function Card({
   type,
   description,
   setChecked,
+  setCheckError,
 }) {
   const [cardColor, setCardColor] = useState("");
   return (
@@ -20,7 +21,13 @@ export default function Card({
         form="delete-product-form"
         className="delete-checkbox"
         onChange={(e) => {
-          setChecked(true);
+          if (e.target.checked) {
+            setChecked(true);
+            setCheckError(false);
+          } else {
+            setChecked(false);
+            setCheckError(null);
+          }
           cardColor === ""
             ? setCardColor(" checkbox-selected")
             : setCardColor("");

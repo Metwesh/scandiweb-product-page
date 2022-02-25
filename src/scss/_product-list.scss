@@ -70,6 +70,13 @@
   }
 }
 
+.center-message {
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 0;
+  color: rgba(255, 0, 0, 0.705);
+}
+
 .loading {
   width: $radius;
   height: $radius;

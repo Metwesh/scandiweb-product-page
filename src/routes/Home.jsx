@@ -7,10 +7,12 @@ export default function Home() {
   const [products, setProducts] = useState(null);
   const [checked, setChecked] = useState(false);
   const [error, setError] = useState(null);
+  const [checkError, setCheckError] = useState(false);
 
   function handleCheck(e) {
     if (!checked) {
       e.preventDefault();
+      setCheckError(true);
       return false;
     }
   }
@@ -37,6 +39,11 @@ export default function Home() {
     <>
       <Navigation />
       <div className="page-content scroll">
+        {checkError && (
+          <h3 className="center-message">
+            Please select one or more of the checkboxes below
+          </h3>
+        )}
         <form
           className="card-stack"
           id="delete-product-form"
@@ -61,7 +68,13 @@ export default function Home() {
               <div className="loading"></div>
             </div>
           )}
-          {products && <CardList setChecked={setChecked} products={products} />}
+          {products && (
+            <CardList
+              setCheckError={setCheckError}
+              setChecked={setChecked}
+              products={products}
+            />
+          )}
         </form>
       </div>
       <hr />
