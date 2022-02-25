@@ -60,15 +60,6 @@
     margin: 0.6rem;
   }
 }
-@supports (grid-column: auto) {
-  .loading-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    grid-column: 1 / span 5;
-    grid-row: 1 / span 2;
-  }
-}
 
 .center-message {
   text-align: center;
@@ -98,6 +89,19 @@
   border: 9px solid;
   border-color: $button-primary-background transparent transparent transparent;
   animation: loading-rotate 0.8s ease-out infinite;
+}
+
+@supports (grid-column: auto) {
+  .loading-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column: 1 / span 5;
+    grid-row: 1 / span 2;
+  }
+  .message {
+    grid-column: 1 / span 2;
+  }
 }
 
 @supports (filter: hue-rotate()) {
