@@ -61,8 +61,8 @@ export default function AddProduct() {
             setErrorMessage(false);
             setInputSku(e.target.value.padStart(4, "0"));
           }}
-          pattern="[a-z\d]*"
-          required
+          // pattern="[a-z\d]*"
+          // required
         />
         {errorMessage && (
           <p className="error-message">
@@ -70,15 +70,22 @@ export default function AddProduct() {
           </p>
         )}
         <label>Name:</label>
-        <input type="text" placeholder="Name" id="name" name="name" required />
+        <input
+          type="text"
+          placeholder="Name"
+          id="name"
+          name="name"
+          // pattern="^[a-zA-Z]+$"
+          // required
+        />
         <label>Price ($):</label>
         <input
           type="text"
           placeholder="Price"
           id="price"
-          pattern="^(0*[1-9][0-9]*(\.[0-9]+)?|0+\.[0-9]*[1-9][0-9]*)$"
           name="price"
-          required
+          // pattern="^(0*[1-9][0-9]*(\.[0-9]+)?|0+\.[0-9]*[1-9][0-9]*)$"
+          // required
         />
         {/* Drop down */}
         <label>Product type:</label>
@@ -117,8 +124,8 @@ export default function AddProduct() {
               placeholder="Size"
               id="size"
               name="description"
-              pattern="^[1-9]\d*(\.\d+)?$"
-              required
+              // pattern="^[1-9]\d*(\.\d+)?$"
+              // required
             />
 
             <p className="description">
@@ -133,8 +140,8 @@ export default function AddProduct() {
               placeholder="Height"
               id="height"
               name="description[height]"
-              pattern="^[1-9]\d*(\.\d+)?$"
-              required
+              // pattern="^[1-9]\d*(\.\d+)?$"
+              // required
             />
 
             <label>Width (cm):</label>
@@ -143,8 +150,8 @@ export default function AddProduct() {
               placeholder="Width"
               id="width"
               name="description[width]"
-              pattern="^[1-9]\d*(\.\d+)?$"
-              required
+              // pattern="^[1-9]\d*(\.\d+)?$"
+              // required
             />
 
             <label>Length (cm):</label>
@@ -153,8 +160,8 @@ export default function AddProduct() {
               placeholder="Length"
               id="length"
               name="description[length]"
-              pattern="^[1-9]\d*(\.\d+)?$"
-              required
+              // pattern="^[1-9]\d*(\.\d+)?$"
+              // required
             />
 
             <p className="description">
@@ -169,8 +176,8 @@ export default function AddProduct() {
               placeholder="Weight"
               id="weight"
               name="description"
-              pattern="^[1-9]\d*(\.\d+)?$"
-              required
+              // pattern="^[1-9]\d*(\.\d+)?$"
+              // required
             />
             <p className="description">
               * Please provide product weight in kilograms
