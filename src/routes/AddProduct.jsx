@@ -21,7 +21,7 @@ export default function AddProduct() {
         return response.json();
       })
       .then((products) => setProducts(products))
-      .catch((error) => console.log(error));
+      .catch((error) => {});
   }, []);
 
   let p_sku = products
