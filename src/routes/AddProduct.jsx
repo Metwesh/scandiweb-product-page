@@ -61,8 +61,8 @@ export default function AddProduct() {
             setErrorMessage(false);
             setInputSku(e.target.value.padStart(4, "0"));
           }}
-          // pattern="[a-z\d]*"
-          // required
+          pattern="[a-z\d]*"
+          required
         />
         {errorMessage && (
           <p className="error-message">
@@ -75,8 +75,8 @@ export default function AddProduct() {
           placeholder="Name"
           id="name"
           name="name"
-          // pattern="^[a-zA-Z]+$"
-          // required
+          pattern="^[a-zA-Z]+$"
+          required
         />
         <label>Price ($):</label>
         <input
@@ -84,10 +84,9 @@ export default function AddProduct() {
           placeholder="Price"
           id="price"
           name="price"
-          // pattern="^(0*[1-9][0-9]*(\.[0-9]+)?|0+\.[0-9]*[1-9][0-9]*)$"
-          // required
+          pattern="^(0*[1-9][0-9]*(\.[0-9]+)?|0+\.[0-9]*[1-9][0-9]*)$"
+          required
         />
-        {/* Drop down */}
         <label>Product type:</label>
         <select
           required
@@ -115,7 +114,6 @@ export default function AddProduct() {
           </option>
         </select>
 
-        {/* Dynamic type info */}
         {selectedType === "DVD" ? (
           <>
             <label>Size (MB):</label>
@@ -124,8 +122,8 @@ export default function AddProduct() {
               placeholder="Size"
               id="size"
               name="description"
-              // pattern="^[1-9]\d*(\.\d+)?$"
-              // required
+              pattern="^[1-9]\d*(\.\d+)?$"
+              required
             />
 
             <p className="description">
@@ -140,8 +138,8 @@ export default function AddProduct() {
               placeholder="Height"
               id="height"
               name="description[height]"
-              // pattern="^[1-9]\d*(\.\d+)?$"
-              // required
+              pattern="^[1-9]\d*(\.\d+)?$"
+              required
             />
 
             <label>Width (cm):</label>
@@ -150,8 +148,8 @@ export default function AddProduct() {
               placeholder="Width"
               id="width"
               name="description[width]"
-              // pattern="^[1-9]\d*(\.\d+)?$"
-              // required
+              pattern="^[1-9]\d*(\.\d+)?$"
+              required
             />
 
             <label>Length (cm):</label>
@@ -160,8 +158,8 @@ export default function AddProduct() {
               placeholder="Length"
               id="length"
               name="description[length]"
-              // pattern="^[1-9]\d*(\.\d+)?$"
-              // required
+              pattern="^[1-9]\d*(\.\d+)?$"
+              required
             />
 
             <p className="description">
@@ -176,8 +174,8 @@ export default function AddProduct() {
               placeholder="Weight"
               id="weight"
               name="description"
-              // pattern="^[1-9]\d*(\.\d+)?$"
-              // required
+              pattern="^[1-9]\d*(\.\d+)?$"
+              required
             />
             <p className="description">
               * Please provide product weight in kilograms
